@@ -12,21 +12,21 @@
       relativeRowClass:'row_relative',                            //关联行的class
   });
 ```
-   功能
+   ##功能
    可针对某一列进行数据排序，可指定排序类型为float和date
 
 
-  使用需知
-  1.依赖zepto插件,用到了选择器和tap事件
-  2.程序在输出时，必须给数据元素的标签上加上data-value=10.23 之类的数据，这样数据格式的变化不会影响排序时值的获取
-  3.程序在输出时，必须给需要排序的行加上特定class名，并作为tableRowClass参数传入
-  4.排序列的表头列需加上data-type属性，来指定此列按照什么类型排序，float为浮点，data为日期，如果不写data-type默认为string  <span class="has_filter" data-type="float">1周</span>
-  5.结构中必须给排序列表头加上class=has_filter  标明此列需要排序
-  6.升序时插件会给表头列元素加上class名 filter_ascending  降序加上class名 filter_dscending
-  7.如果某个数据不参与排序，则data-value='' 设为空即可始终处于排序队尾 
-  8.如存在联动列，需要给每个排序行加上data-order属性，值递增  ```<div data-order="0" class="table_item bdb sort_row">...</div>```
+  ##使用需知
+  * 1.依赖zepto插件,用到了选择器和tap事件
+  * 2.程序在输出时，必须给数据元素的标签上加上data-value=10.23 之类的数据，这样数据格式的变化不会影响排序时值的获取
+  * 3.程序在输出时，必须给需要排序的行加上特定class名，并作为tableRowClass参数传入
+  * 4.排序列的表头列需加上data-type属性，来指定此列按照什么类型排序，float为浮点，data为日期，如果不写data-type默认为string  <span class="has_filter" data-type="float">1周</span>
+  * 5.结构中必须给排序列表头加上class=has_filter  标明此列需要排序
+  * 6.升序时插件会给表头列元素加上class名 filter_ascending  降序加上class名 filter_dscending
+  * 7.如果某个数据不参与排序，则data-value='' 设为空即可始终处于排序队尾 
+  * 8.如存在联动列，需要给每个排序行加上data-order属性，值递增  ```<div data-order="0" class="table_item bdb sort_row">...</div>```
 
-  示例html结构
+  ##示例html结构
   ```
   <ul class="ul_table" id="sort-table">
    <li class="table_title">
