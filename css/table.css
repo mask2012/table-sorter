@@ -1,0 +1,61 @@
+
+/*名称+代码，当前价，涨跌幅*/
+.stocks_list{ width: 100%;}
+.stocks_list li{  overflow: hidden; }
+.stocks_list li.table_title{ background-color: #ececec; border-bottom: 0; line-height: 3.6rem; height: 3.6rem;}
+.stocks_list li.table_title:before{display: none;}
+.stocks_list li.table_title_white{ background-color: transparent;}
+.stocks_list li.table_title_white:before{ display: block;}
+.stocks_list li.table_title div:nth-child(1),
+.stocks_list li.table_title div:nth-child(2),
+.stocks_list li.table_title div:nth-child(3),
+.stocks_list li.table_title div:nth-child(4){font-size: 1.4rem; line-height: 3.6rem; padding-top: 0;}
+.stocks_list li.table_title div span{ font-size: inherit; color: inherit;}
+.stocks_list li div{ float: left; box-sizing: border-box; -webkit-box-sizing: border-box; white-space: nowrap; text-align: right;}
+.stocks_list li div:nth-child(1){ width: 41.67%; text-align: left; padding-left: 15px; white-space: nowrap; padding-top: 1rem; font-size: 1.8rem; white-space: nowrap;}
+.stocks_list li div:nth-child(2){ width: 20.83%; font-size: 2rem; line-height: 5rem;}
+.stocks_list li div:nth-child(3){ width: 37.5%; font-size: 2rem; padding-right: 16px; line-height: 5rem;}
+.stocks_list li div:nth-child(3) i{ font-size: 1.8rem;}
+.stocks_list li div strong{ display: block; line-height: 1; margin-bottom: -3px; font-weight: normal;}
+.stocks_list li div strong .st_name{padding-top: 0;}
+.stocks_list li div span{ font-size: 1.2rem; color: rgba(89,89,89,.6);}
+.stocks_list li.bdb:last-child{ border-bottom: 0;}
+.stocks_list li.bdb:last-child:before{ display: none;}
+.stocks_list li.table_title_white.bdb:last-child:before{ display: block;}
+
+.stocks_list li.table_title div:nth-child(4).has_filter:after{ margin-right: -5px;}
+
+
+/*表格排序*/
+.has_filter:after{ content:''; display: inline-block; vertical-align: middle; margin-left: 4px; position: relative; bottom: 1px; width: 0; height: 0; border-bottom: 6px #ddd solid; border-left: 6px transparent solid; vertical-align: text-bottom;}
+.filter_ascending:after{ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAwCAMAAAA8VkqRAAAASFBMVEUAAADM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NaI8L85AAAAF3RSTlMAB/74tzES8Ofcj3kfyqifaV1SQCbChJUYIX4AAACFSURBVDjL7ZA3AoQwDAQxNiZn7vb/PyUvFqimYjrNVNooYOojHZcZ1Y9AqYYaSL3ieywUT2/yNdjqEUpstHfv0z3EyS0UOHDSTxYnowgNSB36JMbFEIQfAnJDP0DQyd8uuGUnPbf0mdTc8i8tt6yslNyyhULD3wi3dNIoW+6C5xe+8GqYAeLeJRB6mT8zAAAAAElFTkSuQmCC) 0 0 no-repeat; width: 6px; height: 12px; -webkit-background-size: 100% auto; border: 0;}
+.filter_dscending:after{ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAwCAMAAAA8VkqRAAAASFBMVEUAAADM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NbM0NaI8L85AAAAF3RSTlMAB/74t6QuEvDm2o95PstdUyMdxIRraaTBWKsAAACGSURBVDjL7dA3FsQgEANQYTA44bTB97/prsNDDFC78u9GqkYItkM4n+Ip7i3MVmRgq1JeWaAuFTWAVee5XvD3zoseO9emeeNw+KTFgJPqZN4qXGZZfBG84rxTLHz85QyKvxwRW/ilh9BzPck1XE8auB7xS70iM3G9xMj1JM/1EobrSXYC/QDlSCT9rEs9eQAAAABJRU5ErkJggg==) 0 0 no-repeat; width: 6px; height: 12px; -webkit-background-size: 100% auto; border: 0;}
+
+
+/*同类公司数据对比,右三列可滑动*/
+.stocks_table{ overflow: hidden; position: relative; z-index: 10;}
+.stocks_table .table_col1{ position: relative; z-index: 3;}
+.stocks_table .table_col1 .table_item{ padding-left: 16px; line-height: 1;}
+.stocks_table .table_col1 .table_title{ text-indent: 16px;}
+.stocks_table .table_col2{ position: absolute; right: 0; top: 0; left: 40%; right: 0; z-index: 6; overflow: auto; /*-webkit-overflow-scrolling:touch;*/}
+.stocks_table .table_col2 .scroller_inside{width: 600px;}
+.stocks_table .table_title{ background-color: #ececec; line-height: 3.6rem; height: 3.6rem; font-size: 1.4rem;}
+.stocks_table .table_title span{ float: left; text-align: right; width: 80px; box-sizing: border-box; -webkit-box-sizing: border-box; padding-right: 16px; white-space: nowrap;}
+.stocks_table .table_title span b.small1{font-size: 1.4rem;}
+.stocks_table .table_title span b.small2{font-size: 1.3rem;}
+.stocks_table .table_item{ height: 5rem; line-height: 5rem; font-size: 1.8rem; position: relative; overflow: hidden;}
+.stocks_table .table_item:last-child:before{ display: none;}
+.stocks_table .table_item span{ float: left; width: 79px; text-align: right; box-sizing: border-box; -webkit-box-sizing: border-box; padding-right: 16px; white-space: nowrap;}
+.stocks_table .table_item span b.num_stop{font-family: Helvetica, sans-serif;}
+.stocks_table .table_item a{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 10;}
+
+.stocks_table_white .table_title{background-color: #f6f6f6;}
+.stocks_table_white .scroll_hint{background-color: #f6f6f6;}
+
+.st_name{display: block; padding-top: 10px; line-height: 1; margin-bottom: -2px;}
+.st_code{ display: inline-block; font-size: 12px; line-height: 1; color: rgba(89, 89, 89, .6);}
+.st_tag{ display: inline-block; border: 1px #fd7736 solid; color: #fd7736; font-size: 0.8rem; padding: 1px 2px; line-height: 1; border-radius: 2px; position: relative; top: -1px; margin-left: 4px;}
+.ios .st_tag{ border-width: 0.5px;}
+.st_name_only{ line-height: 5rem; display: inline-block;}
+.st_name_only .st_name{line-height: inherit; padding: 0; margin: 0;}
+.tag_new{ display: inline-block; vertical-align: middle; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAwCAMAAACxOw3FAAAAUVBMVEUAAADqRBDqRBDqRBDqRBDqRBDqRBDqRBDqRBDqRBDqRBDqRBD//v7wdk/0m3/5zL/+8u7rUCD1p4/72c7yjm/tXTD4wK/3tJ/85d7uaUDxgl+5FBsDAAAAC3RSTlMA9h51ueSnWE7Xpeq/z28AAAH6SURBVEjHrZfpsoMgDIW1i3fhsCqivv+DXoRo2plqZ3pzflgamY8kZ0qhIV2ut3urPlT7c7teCES4Tv1b3QPyu1UCar823lUJ6Vp5X0pMJcdLKwds1z7+KkF1OUElqgs7IuXLTRZ4a+6ywHvTygLbhscALH8zgP6E+AzEIg2cpIEwosARcFESaEKGvgDGwZjFl+Gstaeg1pFHr4HJux3DQJ+wyhkKDzU8lsUptrwGWjVsvjDQ9yClNcP6keUAV0cW8AfA8tIwkKaHPF/3NTdHKy6YthlArw6BM+D8I1Bvlc01+ZHSCUgWgWaEY2CeiMTAAoh7ZTM3bMIS0HMLD4HFFwZSiezHDISar1+ASDmfAFdfLAMjMJkqaq8reZn89MBAgUMglTbsQI1HmZpQfvYIa9ljWTKcAcmXIyCt5MvbAFcqWs6A1ZfAwBplzSt3KGku65wE+DMg+RK5h716lsuFpmrgyu7zhEMg+2n15jIlwEqZMGVSls1sILwF5lURCJjox8saAA/MdWVHC58DyQpNQzdTONYnkEF7PwH1HqhSBZJFzugsM9H7Cf220bg8tOdA9gWa4VWWA7yHwZwDSYaBStuCc0nvTUTkoT4AnkrTRv1e4n/04kcR8cOS+HFO/sDZdJK8TvzQLn2tEL/4yF/N5C+PMtfbO19v/wAuXKfBxmR0lgAAAABJRU5ErkJggg==) 0 0 no-repeat; -webkit-background-size: 100% auto; background-size: 100% auto; width: 20px; height: 12px; position: relative; top: -3px; margin-left: 1px;  }

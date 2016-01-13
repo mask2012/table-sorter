@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+      <meta name="format-detection" content="telephone=no"/>
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+      <title>灯塔-指引钱途</title>
+      <link rel="stylesheet" media="all" href="css/common.css">
+      <link rel="stylesheet" media="all" href="css/table.css">
+</head>
+<body>
+      
+      <div class="stocks_table" id="subject-in-similar">
+            <div class="table_col1">
+                  <div class="table_title">名称</div>
+                  <div class="table_item bdb">华创证券</div>
+                  <div class="table_item bdb">中金公司</div>
+                  <div class="table_item bdb">乐视网</div>
+            </div>
+            <div class="table_col2">
+                  <div class="scroller_inside">
+                        <div class="table_title">
+                              <span class="has_filter" data-type="float">关联度</span>
+                              <span class="has_filter" data-type="float">当前价</span>
+                              <span class="has_filter" data-type="float">涨跌幅</span>
+                              <span class="has_filter" data-type="float">市值(亿)</span>
+                              <span class="has_filter" data-type="float">市盈率</span>
+                        </div>
+                        <div class="table_item bdb" data-order="0">
+                              <span data-value="96">96%</span>
+                              <span data-value="60.56">60.56</span>
+                              <span data-value="1.25"><b class="num_rise">+1.25%</b></span>
+                              <span data-value="600.23">600.23</span>
+                              <span data-value="100.29">100.29</span>
+                        </div>
+                        <div class="table_item bdb" data-order="1">
+                              <span data-value="92">92%</span>
+                              <span data-value="57.56">57.56</span>
+                              <span data-value="2.25"><b class="num_rise">+2.25%</b></span>
+                              <span data-value="606.23">606.23</span>
+                              <span data-value="96.29">96.29</span>
+                        </div>
+                        <div class="table_item bdb" data-order="2">
+                              <span data-value="95">95%</span>
+                              <span data-value="56.56">56.56</span>
+                              <span data-value="-0.75"><b class="num_fall">-0.75%</b></span>
+                              <span data-value="591.23">591.23</span>
+                              <span data-value="90.29">90.29</span>
+                        </div>
+                  </div>
+            </div>
+      </div>
+                  
+
+      
+
+      <script src="js/lib/zepto.min.js"></script>
+      <script src="js/table-sorter.js"></script>
+      <script>
+            $('#subject-in-similar .scroller_inside').sortTable({
+                  tableTitle:$('#subject-in-similar .table_col2 .table_title'),
+                  tableRowClass:'table_item',
+                  relativeTable:$('#subject-in-similar .table_col1'),
+                  relativeRowClass:'table_item'
+            });
+      </script>
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+      <meta name="format-detection" content="telephone=no"/>
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+      <title>灯塔-指引钱途</title>
+      <link rel="stylesheet" media="all" href="css/common.css">
+      <link rel="stylesheet" media="all" href="css/table.css">
+</head>
+<body>
+      
+      <ul class="stocks_list" id="stocksListTitle">
+            <li class="table_title table_title_white bdb">
+                  <div>名称</div>
+                  <div class="has_filter" data-type="float">当前价</div>
+                  <div class="has_filter filter_ascending" data-type="float">日涨幅</div>
+            </li>
+      </ul>
+
+
+      <ul class="stocks_list" id="stocksList">
+            <li class="sort_row bdb">
+                  <div><strong>统一企业</strong><span>000789</span></div>
+                  <div data-value="36.8"><b class="num">36.8</b></div>
+                  <div data-value="4.25"><b class="num_rise">+4.25%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>青岛啤酒</strong><span>000211</span></div>
+                  <div data-value="28.32"><b class="num">28.32</b></div>
+                  <div data-value="45.15"><b class="num_rise">+45.15%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>华电国际</strong><span>601211</span></div>
+                  <div data-value="6.33"><b class="num">6.33</b></div>
+                  <div data-value="51.23"><b class="num_rise">+51.23%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>中国联塑</strong><span>00789</span></div>
+                  <div data-value="15.26"><b class="num">15.26</b></div>
+                  <div data-value="31.15"><b class="num_rise">+31.15%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>绿城中国</strong><span>00789</span></div>
+                  <div data-value="17.46"><b class="num">17.46</b></div>
+                  <div data-value="1.25"><b class="num_rise">+1.25%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>中国建筑</strong><span>00789</span></div>
+                  <div data-value="13.46"><b class="num">13.46</b></div>
+                  <div data-value="4.45"><b class="num_rise">+4.45%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>信义光能</strong><span>00789</span></div>
+                  <div data-value="25.46"><b class="num">25.46</b></div>
+                  <div data-value="-12.5"><b class="num_fall">-12.50%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>华能国际</strong><span>00789</span></div>
+                  <div data-value="34.46"><b class="num">34.46</b></div>
+                  <div data-value=""><b class="num_stop">停牌</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>远洋地产</strong><span>00789</span></div>
+                  <div data-value="28.46"><b class="num">28.46</b></div>
+                  <div data-value="7.45"><b class="num_rise">+7.45%</b></div>
+            </li>
+            <li class="sort_row bdb">
+                  <div><strong>恒大地产</strong><span>00789</span></div>
+                  <div data-value="55.46"><b class="num">55.46</b></div>
+                  <div data-value="9.50"><b class="num_rise">+9.50%</b></div>
+            </li>
+      </ul>
+
+
+
+      
+
+      <script src="js/lib/zepto.min.js"></script>
+      <script src="js/table-sorter.js"></script>
+      <script>
+            $('#stocksList').sortTable({
+                  tableTitle:$('#stocksListTitle .table_title'),
+                  tableRowClass:'sort_row'
+            });
+      </script>
+</body>
+</html>
